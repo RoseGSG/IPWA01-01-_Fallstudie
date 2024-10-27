@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">  
+    <head>  
+     <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                fetch('header.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.querySelector('header').innerHTML = data;
+                    });
+    
+                fetch('footer.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.querySelector('footer').innerHTML = data;
+                    });
+            });
+        </script>
+    </head>
+
+<body>
+
+    <header></header>
+
+    <main>
+        <table> <!--damit wird eine Tabelle erstellt-->
+            <thead> <!--das ist der Header der Tabelle-->
+                <tr> <!--sind die einzelnen Zeilen (table rows) der Tabelle mit den jeweiligen Heading Elementen th (table header)-->
+                    <th>Leistung</th>
+                    <th>Einzelpreis</th>
+                </tr>
+            </thead>
+
+            <tbody> <!--das ist der Inhalt einer Tabelle-->
+                <tr> <!--ebenfalls Zeilen, aber mit den td (table data)-->
+                    <td>Stundensatz Beratung</td>
+                    <td>&euro; 100,--</td>
+                </tr>
+
+                <tr>
+                    <td>Tagessatz Beratung</td>
+                    <td>&euro; 600,--</td>
+                </tr>
+
+                <tr>
+                    <td>Homepage Baukasten pro Monat</td>
+                    <td>&euro; 1.000,--</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+<footer></footer>
+
+</body>
+</html>

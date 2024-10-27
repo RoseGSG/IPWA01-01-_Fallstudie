@@ -1,0 +1,66 @@
+<!--mit ctrl+shift+I Aufrufen des Web Inspectors-->
+
+<!DOCTYPE html>
+<html lang="de">
+
+    <head>
+        <title>Registrierung von Kleiderspenden</title> <!-- ein Logo fehlt noch!!!-->
+
+        <link rel="stylesheet" href="styles.css" /> <!--ist noch nicht erstellt, erst am Ende, wenn ich weiß welches Framework ich verwenden will-->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                fetch('header.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.querySelector('header').innerHTML = data;
+                    });
+    
+                fetch('footer.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.querySelector('footer').innerHTML = data;
+                    });
+            });
+        </script>
+    </head>
+
+    <body>
+        <title>Registrierung von Kleiderspenden</title>
+
+        <header></header>
+
+        <main> <!-- hier steht der gesammte Content der Website, wird im <main> Element gekapselt
+               besteht aus den Bereichen Navigation, Sektionen mit Überschriften, Tabellen...-->
+            
+           <nav> <!--hier wird wieder eine unnumerrierte Liste mit Links dargestellt-->
+                <ul>
+                <li><a href="fallstudie.html">Homepage</a></li>
+                <li><a href="krisenregion.html">Aktuelle Krisenregionen</a></li>
+                <li><a href="formular.html" >Registrierung einer Kleiderspende</a></li>
+                <li><a href="about.html">Über uns</a></li>
+                </ul>
+             </nav>
+
+            <form> <!--das ist ein Formular, das aus einem input Element besteht,
+                      als Attribute: Art der Eingabe, Name unter welchem es ansprechbar ist, Platzhalter-->
+                 <input type="text" name="suche" placeholder="Suche">
+            </form>
+
+             <section> <!-- Definiert einen Abschnitt, dient der semantischen Gliederung
+                        damit kann über CSS Regeln auch Layouts hinterlegt werden-->
+                    <h1>Schön, dass Sie da sind!</h1>
+                        <p>Wir freuen uns, dass Sie den Weg zu unserer Website gefunden haben.</p>
+                        <p>Was tun wir hier? Kurz gesagt sind wir ein gemeinnütziger Verein, der Kleiderspenden in Krisenregionen schickt. 
+                            Was genau wir tun, finden Sie hier: <a href="about.html">Über uns</a></p> 
+                        <p>Wenn Sie ebenfalls eine Kleiderspende abgeben möchten, können Sie das hier tun: <a href="formular.html" >Registrierung einer Kleiderspende</a></p>
+                        <p>Wir freuen uns über jede noch so kleine Spende, die Menschen in den Krisenregionen sind Ihnen sehr dankbar.
+                            Gerne dürfen Sie uns auch an Nachbarn und Freunde weiterempfehlen!</p>    
+               </section>
+        </main>
+
+        <footer></footer>
+
+    </body>
+
+</html>
+
