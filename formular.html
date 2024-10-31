@@ -32,6 +32,7 @@
             als Attribute: Art der Eingabe, Name unter welchem es ansprechbar ist, Platzhalter-->
             <P><label for="Abgabe">Abgabe:</label>
                 <select id="Abgabe" name="Abgabe:" oninput="checkInput()">
+                    <option value="">Bitte wählen</option>
                     <option value="geschäftsstelle">Übergabe an der Geschäftsstelle</option>
                     <option value="sammelfahrzeug">Abholung durch Sammelfahrzeug</option>
                 </select>
@@ -40,7 +41,7 @@
             <P> <div id="NameContainer" class="hidden">
                 <label for="Anrede">Anrede: </label>
                 <select id="Anrede" name="Anrede">
-                    <option value="default">--</option>
+                    <option value="">Bitte wählen</option>
                     <option value="Herr">Herr</option>
                     <option value="Frau">Frau</option>
                     <option value="Divers">Divers</option>
@@ -60,6 +61,20 @@
                 <input type="text" name="Ort" placeholder="Ort">
             </p>
             </div>
+
+            <P> <form id="dynamicForm">
+                <label for="Kleiderart">Art der Kleidung: </label>
+                <select id="Kleiderart" onchange="addField()">
+                    <option value="">Bitte wählen</option>
+                    <option value="schuhe">Schuhe</option>
+                    <option value="jacke">Jacken, Mäntel etc.</option>
+                    <option value="hose">Hosen etc.</option>
+                    <option value="oberteil">Pulli, Bluse, Hemden etc.</option>
+                    <option value="kleider">Kleider, Röcke etc.</option>
+                    <option value="hut">Kopfbedekungen (Hut, Mütze, Capy etc.)</option>
+                </select>
+                </form>
+            </P>
 
             <p><label for="krisenregion">Wähle eine Krisenregion:</label>
                 <select id="Krisenregion"></select>
@@ -109,6 +124,27 @@
     }
 </script>
 
+<script>
+    function addField() {
+        const Kleiderart = document.getElementById('Kleiderart');
+        const form = document.getElementById('dynamicForm');
+
+        // Überprüfen, ob eine Auswahl getroffen wurde
+        if (Kleiderart.value) {
+            // Neues Eingabefeld erstellen
+            const newField = document.createElement('div');
+            newField.classList.add('form-field');
+            newField.innerHTML = `
+                <label for="newField">Neues Feld:</label>
+                <input type="text" name="newField">
+            `;
+            form.appendChild(newField);
+
+            // Dropdown zurücksetzen, um weitere Felder hinzufügen zu können
+            Kleiderart.value = '';
+        }
+    }
+</script>
 
 </body>
 </html>
