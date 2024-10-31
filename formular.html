@@ -16,6 +16,8 @@
                     });
             });
         </script>
+
+
     </head>
 
 <body>
@@ -23,10 +25,61 @@
     <header></header>
 
     <main>
+        <form> <!--das ist ein Formular, das aus einem input Element besteht,
+            als Attribute: Art der Eingabe, Name unter welchem es ansprechbar ist, Platzhalter-->
+            <P><label for="Abgabe">Abgabe:</label>
+                <select id="Abgabe" name="Abgabe:">
+                    <option value="geschäftsstelle">An der Geschäftsstelle</option>
+                    <option value="sammelfahrzeug">Abholung durch Sammelfahrzeug</option>
+                </select>
+            </P> 
+          
+            <P><label for="Anrede">Anrede: </label>
+                <select id="Anrede" name="Anrede">
+                    <option value="default">--</option>
+                    <option value="Herr">Herr</option>
+                    <option value="Frau">Frau</option>
+                    <option value="Divers">Divers</option>
+                </select>
+            </P> 
+           <p><input type="text" name="Nachname" placeholder="Nachname">
+            <input type="text" name="Vorname" placeholder="Vorname">
+            </p>
+            <p><input type="text" name="Straße" placeholder="Straße">
+                <input type="number" name="Hausnummer" placeholder="Hausnummer">
+            </p>
+            <p><input type="number" name="Postleitzahl" placeholder="Postleitzahl">
+                <input type="text" name="Ort" placeholder="Ort">
 
+            </p>
+            <p><input type="email" name="email" placeholder="Email-Adresse"></p>
+            <p><label for="krisenregion">Wähle eine Krisenregion:</label>
+                <select id="Krisenregion"></select>
+            </p>
+         </form>
     </main>
 
 <footer></footer>
+<script>
+    // Funktion zum Laden der Tabelle und Extrahieren der Werte
+    async function loadTableData() {
+        const response = await fetch('krisenregion.html');
+        const text = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, 'text/html');
+        const rows = doc.querySelectorAll('#dataKrisenregion tr');
+        const dropdown = document.getElementById('Krisenregion');
 
+        for (let i = 1; i < rows.length; i++) {
+                const cell = rows[i].cells[0];
+                const option = document.createElement('option');
+                option.textContent = cell.textContent;
+                dropdown.appendChild(option);
+        };
+    }
+
+    // Tabelle laden, wenn das Dokument geladen ist
+    document.addEventListener('DOMContentLoaded', loadTableData);
+</script>
 </body>
 </html>
