@@ -17,7 +17,7 @@
             });
         </script>
 
-
+        <style>.hidden{ display: none;}</style>
     </head>
 
 <body>
@@ -25,16 +25,20 @@
     <header></header>
 
     <main>
+       <p><h3>Unsere Geschäftstelle befindet sich hier:</h3></p>
+       <p>Hilfestraße 5<br>90471 Nürnberg</p>
+       
         <form> <!--das ist ein Formular, das aus einem input Element besteht,
             als Attribute: Art der Eingabe, Name unter welchem es ansprechbar ist, Platzhalter-->
             <P><label for="Abgabe">Abgabe:</label>
-                <select id="Abgabe" name="Abgabe:">
-                    <option value="geschäftsstelle">An der Geschäftsstelle</option>
+                <select id="Abgabe" name="Abgabe:" oninput="checkInput()">
+                    <option value="geschäftsstelle">Übergabe an der Geschäftsstelle</option>
                     <option value="sammelfahrzeug">Abholung durch Sammelfahrzeug</option>
                 </select>
             </P> 
           
-            <P><label for="Anrede">Anrede: </label>
+            <P> <div id="NameContainer" class="hidden">
+                <label for="Anrede">Anrede: </label>
                 <select id="Anrede" name="Anrede">
                     <option value="default">--</option>
                     <option value="Herr">Herr</option>
@@ -45,14 +49,18 @@
            <p><input type="text" name="Nachname" placeholder="Nachname">
             <input type="text" name="Vorname" placeholder="Vorname">
             </p>
+            <p><input type="email" name="email" placeholder="Email-Adresse"></p>
+            </div>
+
+            <div id="AdresseContainer" class="hidden">
             <p><input type="text" name="Straße" placeholder="Straße">
                 <input type="number" name="Hausnummer" placeholder="Hausnummer">
             </p>
             <p><input type="number" name="Postleitzahl" placeholder="Postleitzahl">
                 <input type="text" name="Ort" placeholder="Ort">
-
             </p>
-            <p><input type="email" name="email" placeholder="Email-Adresse"></p>
+            </div>
+
             <p><label for="krisenregion">Wähle eine Krisenregion:</label>
                 <select id="Krisenregion"></select>
             </p>
@@ -81,5 +89,26 @@
     // Tabelle laden, wenn das Dokument geladen ist
     document.addEventListener('DOMContentLoaded', loadTableData);
 </script>
+
+<script> //Script zum optionalen Einblenden der Adresse, jenachdem ob Geschäftstelle oder Abholung ausgewählt wurde
+    function checkInput() {
+        const AbgabeValue = document.getElementById('Abgabe').value;
+        const NameContainer = document.getElementById('NameContainer');
+        const AdresseContainer = document.getElementById('AdresseContainer');
+
+        if (AbgabeValue === 'geschäftsstelle') {
+            NameContainer.classList.remove('hidden');
+            AdresseContainer.classList.add('hidden');
+        } else if (AbgabeValue === 'sammelfahrzeug') {
+            NameContainer.classList.remove('hidden');
+            AdresseContainer.classList.remove('hidden');
+        } else {
+            NameContainer.classList.add('hidden');
+            AdresseContainer.classList.add('hidden');
+        }
+    }
+</script>
+
+
 </body>
 </html>
