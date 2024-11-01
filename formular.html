@@ -61,10 +61,10 @@
                 <input type="text" name="Ort" placeholder="Ort">
             </p>
             </div>
-
+        </form>    
             <P> <form id="dynamicForm">
                 <label for="Kleiderart">Art der Kleidung: </label>
-                <select id="Kleiderart" onchange="addField()">
+                <select id="Kleiderart" onchange="addField(this)">
                     <option value="">Bitte wählen</option>
                     <option value="schuhe">Schuhe</option>
                     <option value="jacke">Jacken, Mäntel etc.</option>
@@ -75,7 +75,7 @@
                 </select>
                 </form>
             </P>
-
+        <form>    
             <p><label for="krisenregion">Wähle eine Krisenregion:</label>
                 <select id="Krisenregion"></select>
             </p>
@@ -120,28 +120,6 @@
         } else {
             NameContainer.classList.add('hidden');
             AdresseContainer.classList.add('hidden');
-        }
-    }
-</script>
-
-<script>
-    function addField() {
-        const Kleiderart = document.getElementById('Kleiderart');
-        const form = document.getElementById('dynamicForm');
-
-        // Überprüfen, ob eine Auswahl getroffen wurde
-        if (Kleiderart.value) {
-            // Neues Eingabefeld erstellen
-            const newField = document.createElement('div');
-            newField.classList.add('form-field');
-            newField.innerHTML = `
-                <label for="newField">Neues Feld:</label>
-                <input type="text" name="newField">
-            `;
-            form.appendChild(newField);
-
-            // Dropdown zurücksetzen, um weitere Felder hinzufügen zu können
-            Kleiderart.value = '';
         }
     }
 </script>
