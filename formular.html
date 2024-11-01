@@ -38,7 +38,7 @@
                 </select>
             </P> 
           
-            <P> <div id="NameContainer" class="hidden">
+            <P> <div id="AbholerContainer" class="hidden">
                 <label for="Anrede">Anrede: </label>
                 <select id="Anrede" name="Anrede">
                     <option value="">Bitte wählen</option>
@@ -51,9 +51,6 @@
             <input type="text" name="Vorname" placeholder="Vorname">
             </p>
             <p><input type="email" name="email" placeholder="Email-Adresse"></p>
-            </div>
-
-            <div id="AdresseContainer" class="hidden">
             <p><input type="text" name="Straße" placeholder="Straße">
                 <input type="number" name="Hausnummer" placeholder="Hausnummer">
             </p>
@@ -61,6 +58,8 @@
                 <input type="text" name="Ort" placeholder="Ort">
             </p>
             </div>
+
+            <div id="AlleContainer" class="hidden">
         </form>    
             <P> <form id="dynamicForm">
                 <label for="Kleiderart">Art der Kleidung: </label>
@@ -79,6 +78,7 @@
             <p><label for="krisenregion">Wähle eine Krisenregion:</label>
                 <select id="Krisenregion"></select>
             </p>
+        </div>
          </form>
     </main>
 
@@ -108,18 +108,18 @@
 <script> //Script zum optionalen Einblenden der Adresse, jenachdem ob Geschäftstelle oder Abholung ausgewählt wurde
     function checkInput() {
         const AbgabeValue = document.getElementById('Abgabe').value;
-        const NameContainer = document.getElementById('NameContainer');
-        const AdresseContainer = document.getElementById('AdresseContainer');
+        const AbholerContainer = document.getElementById('AbholerContainer');
+        const AlleContainer = document.getElementById('AlleContainer');
 
         if (AbgabeValue === 'geschäftsstelle') {
-            NameContainer.classList.remove('hidden');
-            AdresseContainer.classList.add('hidden');
+            AlleContainer.classList.remove('hidden');
+            AbholerContainer.classList.add('hidden');
         } else if (AbgabeValue === 'sammelfahrzeug') {
-            NameContainer.classList.remove('hidden');
-            AdresseContainer.classList.remove('hidden');
+            AbholerContainer.classList.remove('hidden');
+            AlleContainer.classList.remove('hidden');
         } else {
-            NameContainer.classList.add('hidden');
-            AdresseContainer.classList.add('hidden');
+            AbholerContainer.classList.add('hidden');
+            AlleContainer.classList.add('hidden');
         }
     }
 </script>
