@@ -58,7 +58,10 @@
             <p><input type="text" name="Straße" placeholder="Straße">
                 <input type="number" name="Hausnummer" placeholder="Hausnummer">
             </p>
-            <p><input type="number" name="Postleitzahl" placeholder="Postleitzahl">
+            <p><form onsubmit="vergleichen(event);">
+                    <label for="Postleitzahl">Postleitzahl</label>
+                     <input type="number" id="Postleitzahl" name="Postleitzahl" placeholder="Postleitzahl" required>
+                    <button type="submit" >Plz prüfen</button></form>
                 <input type="text" name="Ort" placeholder="Ort">
             </p>
             </div>
@@ -124,6 +127,32 @@
         } else {
             AbholerContainer.classList.add('hidden');
             AlleContainer.classList.add('hidden');
+        }
+    }
+</script>
+
+<script>
+    function vergleichen(event) {
+        event.preventDefault();
+        // Hole den Wert des Eingabefeldes
+        let eingabe = document.getElementById("Postleitzahl").value;
+        
+        if (eingabe.length < 5) {
+            alert ("Bitte eine gültige Postleitzahl eingeben"); 
+            return;
+        }
+        // Extrahiere die ersten zwei Zahlen
+        let ersteZweiZahlen = eingabe.substring(0, 2);
+        
+        // Feste Werte zum Vergleichen
+        let wert1 = "90";
+        
+        // Vergleiche und zeige entsprechende Meldung
+        if (ersteZweiZahlen === wert1) {
+            alert("Die angegebene Adresse liegt in der Nähe unserer Geschäftstelle. Bitte bringen Sie Ihre Spende direkt dorthin.");
+        
+        } else {
+            alert("Das Sammelfahrzeug kommt zu Ihnen!");
         }
     }
 </script>
