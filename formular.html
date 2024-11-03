@@ -27,6 +27,10 @@
     <main>
        <p><h3>Unsere Geschäftstelle befindet sich hier:</h3></p>
        <p>Hilfestraße 5<br>90471 Nürnberg</p>
+
+       <p><h4>Sie können Ihre Spende entweder direkt bei unserer Geschäftstelle abgeben
+                oder Sie lassen Ihre Spende bequem von unserem Sammelfahrzeug bei Ihnen zu Hause abholen.
+       </h4></p>
        
         <form> <!--das ist ein Formular, das aus einem input Element besteht,
             als Attribute: Art der Eingabe, Name unter welchem es ansprechbar ist, Platzhalter-->
@@ -105,7 +109,7 @@
     document.addEventListener('DOMContentLoaded', loadTableData);
 </script>
 
-<script> //Script zum optionalen Einblenden der Adresse, jenachdem ob Geschäftstelle oder Abholung ausgewählt wurde
+<script> //Script zum optionalen Einblenden von Name und Adresse, jenachdem ob Geschäftstelle oder Abholung ausgewählt wurde
     function checkInput() {
         const AbgabeValue = document.getElementById('Abgabe').value;
         const AbholerContainer = document.getElementById('AbholerContainer');
