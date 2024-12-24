@@ -90,6 +90,7 @@
                 <select id="Krisenregion" title="TabelleKrisenregionen" name="Krisenregion"></select>
             </p>
         </div>
+        <button type="submit" id="Kleiderspende registrieren">Kleiderspende registrieren</button>
          </form>
     </main>
 
@@ -162,7 +163,42 @@
     document.getElementById('Plz prüfen').addEventListener('click', vergleichen)
 </script>
 
- 
+ <script>
+    document.getElementById('Kleiderspende registrieren').addEventListener('click', function() {
+        event.preventDefault();
+        // Erfasse die Eingabewerte
+        const Anrede = document.getElementById('Anrede').value;
+        const Nachname = document.getElementById('Nachname').value;
+        const Vorname = document.getElementById('Vorname').value;
+        const email = document.getElementById ('email').value;
+        const Straße = document.getElementById('Strraße').value;
+        const Hausnummer = document.getElementById('Hausnummer').value;
+        const Postleitzahl = document.getElementById('Postleitzahl').value;
+        const Ort = document.getElementById('Ort').value;
+        const Kleiderart = document.getElementById('Kleiderart').value;
+        const Krisenregion = document.getElementById('Krisenregion').value;
+
+        // Erstelle eine neue Seite mit den Eingabewerten
+        const newPageContent = `
+            <h1>Übersicht der Eingaben</h1>
+            <p><strong>Anrede:</strong> ${Anrede}</p>
+            <p><strong>Nachname:</strong> ${Nachname}</p>
+            <p><strong>Vorname:</strong> ${Vorname}</p>
+            <p><strong>E-Mail:</strong> ${email}</p>
+            <p><strong>Straße:</strong> ${Straße}</p>
+            <p><strong>Hausnummer:</strong> ${Hausnummer}</p>
+            <p><strong>Postleitzahl:</strong> ${Postleitzahl}</p>
+            <p><strong>Ort:</strong> ${Ort}</p>
+            <p><strong>Kleiderart:</strong> ${Kleiderart}</p>
+            <p><strong>Krisenregion:</strong> ${Krisenregion}</p>
+        `;
+
+        // Öffne eine neue Seite und füge den Inhalt hinzu 
+        const newWindow = window.open('', 'newWindow', 'width=600,height=400'); 
+        newWindow.document.write(newPageContent); 
+        newWindow.document.close();
+        });
+ </script>
 
 </body>
 </html>
