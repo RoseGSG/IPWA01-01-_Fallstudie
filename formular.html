@@ -63,7 +63,7 @@
             <p><form onsubmit="vergleichen(event);">
                     <label for="Postleitzahl">Postleitzahl</label>
                      <input type="number" id="Postleitzahl" name="Postleitzahl" placeholder="Postleitzahl" required>
-                    <button type="submit" >Plz prüfen</button>
+                    <button type="submit" id="Plz prüfen">Plz prüfen</button>
                 </form>
 
                 <input type="text" name="Ort" placeholder="Ort">
@@ -87,7 +87,7 @@
             </P>
         <form>    
             <p><label for="krisenregion">Wähle eine Krisenregion:</label>
-                <select id="Krisenregion" title="TabelleKrisenregionen"></select>
+                <select id="Krisenregion" title="TabelleKrisenregionen" name="Krisenregion"></select>
             </p>
         </div>
          </form>
@@ -159,6 +159,7 @@
             alert("Das Sammelfahrzeug kommt zu Ihnen!");
         }
     }
+    document.getElementById('Plz prüfen').addEventListener('click', vergleichen)
 </script>
 
 </body>
