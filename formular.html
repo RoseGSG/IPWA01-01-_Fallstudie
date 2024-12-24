@@ -141,7 +141,7 @@
         // Hole den Wert des Eingabefeldes
         let eingabe = document.getElementById("Postleitzahl").value;
         
-        if (eingabe.length < 5) {
+        if (eingabe.length < 5 || eingabe.length > 5 ) {
             alert ("Bitte eine gültige Postleitzahl eingeben"); 
             return;
         }
@@ -161,6 +161,8 @@
     }
     document.getElementById('Plz prüfen').addEventListener('click', vergleichen)
 </script>
+
+ 
 
 </body>
 </html>
