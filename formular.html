@@ -19,32 +19,6 @@
 
         <style>.hidden{ display: none;}</style>
 
-        <script>
-            function vergleichen(event) {
-                event.preventDefault();
-                // Hole den Wert des Eingabefeldes
-                let eingabe = document.getElementById("Postleitzahl").value;
-                
-                if (eingabe.length < 5) {
-                    alert ("Bitte eine gültige Postleitzahl eingeben"); 
-                    return;
-                }
-                // Extrahiere die ersten zwei Zahlen
-                let ersteZweiZahlen = eingabe.substring(0, 2);
-                
-                // Feste Werte zum Vergleichen
-                let wert1 = "90";
-                
-                // Vergleiche und zeige entsprechende Meldung
-                if (ersteZweiZahlen === wert1) {
-                    alert("Die angegebene Adresse liegt in der Nähe unserer Geschäftstelle. Bitte bringen Sie Ihre Spende direkt dorthin.");
-                
-                } else {
-                    alert("Das Sammelfahrzeug kommt zu Ihnen!");
-                }
-            }
-        </script>
-
 
     </head>
 
@@ -100,7 +74,7 @@
         </form>    
             <P> <form id="dynamicForm">
                 <label for="Kleiderart">Art der Kleidung: </label>
-                <select id="Kleiderart" onchange="addField(this)">
+                <select id="Kleiderart" name="Kleiderart">
                     <option value="">Bitte wählen</option>
                     <option value="schuhe">Schuhe</option>
                     <option value="jacke">Jacken, Mäntel etc.</option>
@@ -109,11 +83,11 @@
                     <option value="kleider">Kleider, Röcke etc.</option>
                     <option value="hut">Kopfbedekungen (Hut, Mütze, Capy etc.)</option>
                 </select>
-                </form>
+            </form>
             </P>
         <form>    
             <p><label for="krisenregion">Wähle eine Krisenregion:</label>
-                <select id="Krisenregion"></select>
+                <select id="Krisenregion" title="TabelleKrisenregionen"></select>
             </p>
         </div>
          </form>
@@ -164,18 +138,25 @@
 <script>
     function vergleichen(event) {
         event.preventDefault();
+        // Hole den Wert des Eingabefeldes
         let eingabe = document.getElementById("Postleitzahl").value;
+        
         if (eingabe.length < 5) {
-            alert("Bitte eine gültige Postleitzahl angeben!");
+            alert ("Bitte eine gültige Postleitzahl eingeben"); 
             return;
         }
+        // Extrahiere die ersten zwei Zahlen
         let ersteZweiZahlen = eingabe.substring(0, 2);
+        
+        // Feste Werte zum Vergleichen
         let wert1 = "90";
+        
+        // Vergleiche und zeige entsprechende Meldung
         if (ersteZweiZahlen === wert1) {
-            alert("Die angegebe Adresse liegt in der Nähe der Geschäftstelle. Bitte bringen Sie Ihre Spende direkt dorthin.");
-        } 
-        else {
-            alert("Das Sammelfahrzeug kommt zu Ihnen.");
+            alert("Die angegebene Adresse liegt in der Nähe unserer Geschäftstelle. Bitte bringen Sie Ihre Spende direkt dorthin.");
+        
+        } else {
+            alert("Das Sammelfahrzeug kommt zu Ihnen!");
         }
     }
 </script>
