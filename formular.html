@@ -53,12 +53,12 @@
                     <option value="Divers">Divers</option>
                 </select>
             </P> 
-           <p><input type="text" name="Nachname" placeholder="Nachname">
-            <input type="text" name="Vorname" placeholder="Vorname">
+           <p><input type="text" name="Nachname" id="Nachname" placeholder="Nachname">
+            <input type="text" name="Vorname" id="Vorname" placeholder="Vorname">
             </p>
-            <p><input type="email" name="email" placeholder="Email-Adresse"></p>
-            <p><input type="text" name="Straße" placeholder="Straße">
-                <input type="number" name="Hausnummer" placeholder="Hausnummer">
+            <p><input type="email" name="email" id="email" placeholder="Email-Adresse"></p>
+            <p><input type="text" name="Straße" id="Straße" placeholder="Straße">
+                <input type="number" name="Hausnummer" id="Hausnummer" placeholder="Hausnummer">
             </p>
             <p><form onsubmit="vergleichen(event);">
                     <label for="Postleitzahl">Postleitzahl</label>
@@ -66,7 +66,7 @@
                     <button type="submit" id="Plz prüfen">Plz prüfen</button>
                 </form>
 
-                <input type="text" name="Ort" placeholder="Ort">
+                <input type="text" id="Ort" name="Ort" placeholder="Ort">
             </p>
             </div>
 
@@ -164,19 +164,20 @@
 </script>
 
  <script>
-    document.getElementById('Kleiderspende registrieren').addEventListener('click', function() {
+    document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('Kleiderspende registrieren').addEventListener('click', function(event) {
         event.preventDefault();
         // Erfasse die Eingabewerte
-        const Anrede = document.getElementById('Anrede').value;
-        const Nachname = document.getElementById('Nachname').value;
-        const Vorname = document.getElementById('Vorname').value;
-        const email = document.getElementById ('email').value;
-        const Straße = document.getElementById('Strraße').value;
-        const Hausnummer = document.getElementById('Hausnummer').value;
-        const Postleitzahl = document.getElementById('Postleitzahl').value;
-        const Ort = document.getElementById('Ort').value;
-        const Kleiderart = document.getElementById('Kleiderart').value;
-        const Krisenregion = document.getElementById('Krisenregion').value;
+        const Anrede = document.getElementById('Anrede').value || 'Keine Anrede angegeben';
+        const Nachname = document.getElementById('Nachname').value || 'Kein Nachname angegeben';
+        const Vorname = document.getElementById('Vorname').value || 'Kein Vorname angegeben';
+        const email = document.getElementById ('email').value || 'Keine Email angegeben';
+        const Straße = document.getElementById('Straße').value || 'Keine Straße angegeben';
+        const Hausnummer = document.getElementById('Hausnummer').value || 'Keine Hausnummer angegeben';
+        const Postleitzahl = document.getElementById('Postleitzahl').value || 'Keine PLZ angegeben';
+        const Ort = document.getElementById('Ort').value || 'Kein Ort angegeben';
+        const Kleiderart = document.getElementById('Kleiderart').value || 'Keine Kleiderart angegeben';
+        const Krisenregion = document.getElementById('Krisenregion').value || 'Keine Krisenregion angegeben';
 
         // Erstelle eine neue Seite mit den Eingabewerten
         const newPageContent = `
@@ -198,7 +199,9 @@
         newWindow.document.write(newPageContent); 
         newWindow.document.close();
         });
+    });
  </script>
+  
 
 </body>
 </html>
