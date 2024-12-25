@@ -180,6 +180,11 @@
             const Kleiderart = document.getElementById('Kleiderart');
             const selectedOption = Kleiderart.options[Kleiderart.selectedIndex].text;
             const Krisenregion = document.getElementById('Krisenregion').value;
+            
+            // Erfasse das aktuelle Datum und die Uhrzeit ohne Sekunden 
+            const now = new Date(); 
+            const options = { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' }; 
+            const dateTimeString = now.toLocaleString('de-DE', options);
 
             // Erstelle eine neue Seite mit den Eingabewerten
             let newPageContent = '<h1>Übersicht der Eingaben</h1>';
@@ -203,6 +208,7 @@
                 newPageContent += `<p><strong>Kleiderart:</strong> ${selectedOption}</p>`;}
             if (Krisenregion) {
                 newPageContent += `<p><strong>Krisenregion:</strong> ${Krisenregion}</p>`;}
+            newPageContent += `<p><strong>Datum und Uhrzeit:</strong> ${dateTimeString}</p>`;
 
             // Öffne eine neue Seite und füge den Inhalt hinzu 
             const newWindow = window.open('', 'Ihre Zusammenfassung', 'width=600,height=600'); 
