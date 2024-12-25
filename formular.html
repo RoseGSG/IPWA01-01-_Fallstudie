@@ -163,45 +163,66 @@
     document.getElementById('Plz prüfen').addEventListener('click', vergleichen)
 </script>
 
- <script>
+<script>
     document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('Kleiderspende registrieren').addEventListener('click', function(event) {
-        event.preventDefault();
-        // Erfasse die Eingabewerte
-        const Anrede = document.getElementById('Anrede').value || 'Keine Anrede angegeben';
-        const Nachname = document.getElementById('Nachname').value || 'Kein Nachname angegeben';
-        const Vorname = document.getElementById('Vorname').value || 'Kein Vorname angegeben';
-        const email = document.getElementById ('email').value || 'Keine Email angegeben';
-        const Straße = document.getElementById('Straße').value || 'Keine Straße angegeben';
-        const Hausnummer = document.getElementById('Hausnummer').value || 'Keine Hausnummer angegeben';
-        const Postleitzahl = document.getElementById('Postleitzahl').value || 'Keine PLZ angegeben';
-        const Ort = document.getElementById('Ort').value || 'Kein Ort angegeben';
-        const Kleiderart = document.getElementById('Kleiderart').value || 'Keine Kleiderart angegeben';
-        const Krisenregion = document.getElementById('Krisenregion').value || 'Keine Krisenregion angegeben';
+        document.getElementById('Kleiderspende registrieren').addEventListener('click', function(event) {
+            event.preventDefault();
+            // Erfasse die Eingabewerte
+            const Anrede = document.getElementById('Anrede').value;
+            const Nachname = document.getElementById('Nachname').value;
+            const Vorname = document.getElementById('Vorname').value;
+            const email = document.getElementById('email').value;
+            const Straße = document.getElementById('Straße').value;
+            const Hausnummer = document.getElementById('Hausnummer').value;
+            const Postleitzahl = document.getElementById('Postleitzahl').value;
+            const Ort = document.getElementById('Ort').value;
+            // Erfasse den angezeigten Namen der ausgewählten Option im Dropdown-Feld 
+            const Kleiderart = document.getElementById('Kleiderart');
+            const selectedOption = Kleiderart.options[Kleiderart.selectedIndex].text;
+            const Krisenregion = document.getElementById('Krisenregion').value;
 
-        // Erstelle eine neue Seite mit den Eingabewerten
-        const newPageContent = `
-            <h1>Übersicht der Eingaben</h1>
-            <p><strong>Anrede:</strong> ${Anrede}</p>
-            <p><strong>Nachname:</strong> ${Nachname}</p>
-            <p><strong>Vorname:</strong> ${Vorname}</p>
-            <p><strong>E-Mail:</strong> ${email}</p>
-            <p><strong>Straße:</strong> ${Straße}</p>
-            <p><strong>Hausnummer:</strong> ${Hausnummer}</p>
-            <p><strong>Postleitzahl:</strong> ${Postleitzahl}</p>
-            <p><strong>Ort:</strong> ${Ort}</p>
-            <p><strong>Kleiderart:</strong> ${Kleiderart}</p>
-            <p><strong>Krisenregion:</strong> ${Krisenregion}</p>
-        `;
+            // Erstelle eine neue Seite mit den Eingabewerten
+            let newPageContent = '<h1>Übersicht der Eingaben</h1>';
+            if (Anrede) {
+                newPageContent += `<p><strong>Anrede:</strong> ${Anrede}</p>`;
+            }
+            if (Nachname) {
+                newPageContent += `<p><strong>Nachname:</strong> ${Nachname}</p>`;
+            }
+            if (Vorname) {
+                newPageContent += `<p><strong>Vorname:</strong> ${Vorname}</p>`;
+            }
+            if (email) {
+                newPageContent += `<p><strong>E-Mail:</strong> ${email}</p>`;
+            }
+            if (Straße) {
+                newPageContent += `<p><strong>Straße:</strong> ${Straße}</p>`;
+            }
+            if (Hausnummer) {
+                newPageContent += `<p><strong>Hausnummer:</strong> ${Hausnummer}</p>`;
+            }
+            if (Postleitzahl) {
+                newPageContent += `<p><strong>Postleitzahl:</strong> ${Postleitzahl}</p>`;
+            }
+            if (Ort) {
+                newPageContent += `<p><strong>Ort:</strong> ${Ort}</p>`;
+            }
+            if (selectedOption) {
+                newPageContent += `<p><strong>Kleiderart:</strong> ${selectedOption}</p>`;
+            }
+            if (Krisenregion) {
+                newPageContent += `<p><strong>Krisenregion:</strong> ${Krisenregion}</p>`;
+            }
 
-        // Öffne eine neue Seite und füge den Inhalt hinzu 
-        const newWindow = window.open('', 'newWindow', 'width=600,height=400'); 
-        newWindow.document.write(newPageContent); 
-        newWindow.document.close();
+            // Öffne eine neue Seite und füge den Inhalt hinzu 
+            const newWindow = window.open('', 'Ihre Zusammenfassung', 'width=600,height=600'); 
+            newWindow.document.write(newPageContent); 
+            newWindow.document.close();
         });
     });
- </script>
-  
+</script>
 
+  
+  
 </body>
 </html>
