@@ -175,7 +175,7 @@
             const Straße = document.getElementById('Straße').value;
             const Hausnummer = document.getElementById('Hausnummer').value;
             const Postleitzahl = document.getElementById('Postleitzahl').value;
-            const Ort = document.getElementById('Ort').value;
+            const Ort = document.getElementById('Ort').value || 'Nürnberg';
             // Erfasse den angezeigten Namen der ausgewählten Option im Dropdown-Feld 
             const Kleiderart = document.getElementById('Kleiderart');
             const selectedOption = Kleiderart.options[Kleiderart.selectedIndex].text;
@@ -208,8 +208,8 @@
                 newPageContent += `<p><strong>Kleiderart:</strong> ${selectedOption}</p>`;}
             if (Krisenregion) {
                 newPageContent += `<p><strong>Krisenregion:</strong> ${Krisenregion}</p>`;}
-            newPageContent += `<p><strong>Datum und Uhrzeit:</strong> ${dateTimeString}</p>`;
-
+            // Füge Ort, Datum und Uhrzeit am Ende der Zusammenfassung hinzu 
+                newPageContent += `<p><strong>${Ort}, den ${dateTimeString.split(', ')[0]} um ${dateTimeString.split(', ')[1]} Uhr</strong></p>`;
             // Öffne eine neue Seite und füge den Inhalt hinzu 
             const newWindow = window.open('', 'Ihre Zusammenfassung', 'width=600,height=600'); 
             newWindow.document.write(newPageContent); 
