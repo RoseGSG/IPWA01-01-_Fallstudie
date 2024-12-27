@@ -1,0 +1,35 @@
+  /* Media Queries für verschiedene Bildschirmgrößen */
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    body {
+      font-size: 12px;
+    }
+  }
+
+  /* Laden Bulma's base styles und themes (inklusive minireset)*/
+  @use "bulma/sass/base";
+  @use "bulma/sass/themes";
+  
+  /* Laden der Buttons und Titelelemente und Komponente*/
+  @use "bulma/sass/elements/button";
+  @use "bulma/sass/elements/title";
+  @use "bulma/sass/components/message";
+
+  /*die Klasse hidden bekannt machen, da diese in Bulma nicht integriert ist*/
+  .hidden {
+    display: none;
+  }
+  
+body {
+    background-color: #C5F6FC;
+  }
+  
+<button class="button is-info">Button</button>
+
+  
+ 
