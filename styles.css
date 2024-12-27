@@ -31,5 +31,11 @@ body {
   
 <button class="button is-info">Button</button>
 
+.footer {
+    background-color: #90eef9;
+    padding: 2rem 1.5rem;
+  }
+  
+
   
  
