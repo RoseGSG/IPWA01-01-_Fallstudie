@@ -11,7 +11,7 @@
     }
   }
 
-  /* Laden Bulma's base styles und themes (inklusive minireset)*/
+  /* Laden von Bulma's base styles und themes (inklusive minireset)*/
   @use "bulma/sass/base";
   @use "bulma/sass/themes";
   
@@ -25,6 +25,34 @@
     display: none;
   }
   
+.header {
+  background-color: aquamarine;
+  padding: 2rem 1.5rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+}
+.header-list li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.header-image {
+  max-width: 150px;
+  height: auto;
+}
+
 body {
     background-color: #C5F6FC;
   }
@@ -35,7 +63,10 @@ body {
     background-color: #90eef9;
     padding: 2rem 1.5rem;
   }
-  
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+  }
 
   
  
