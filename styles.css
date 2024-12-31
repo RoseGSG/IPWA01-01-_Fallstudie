@@ -26,6 +26,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .container {
@@ -46,6 +50,7 @@
   margin: 0;
   padding: 0;
   flex-grow: 1;
+  padding-bottom: 40px;
 }
 .header-list li {
   display: inline;
@@ -100,18 +105,28 @@
 
 .main-container {
   display: flex;
+  min-height: 100vh;
+  padding-top: 150px;
 }
 
 .navigation {
   width: 200px;
-  background-color: #;
+  background-color: #d2e7ea;
   padding: 10px;
-  box-shadow: 2px 0 5px #;
+  box-shadow: 2px 0 5px #c8e1e5;
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
 }
 
 .navigation ul {
   list-style-type: none;
   padding: 0;
+  flex-grow: 1;
+}
+
+.navigation ul li {
+  margin: 10px 0;
 }
 
 .menu-icon {
@@ -126,14 +141,18 @@
 main {
   flex-grow: 1;
   padding: 20px;
+  padding-bottom: 150px;
 }
 
 .footer {
     background-color: #1c444f;
     padding: 2rem 1.5rem;
+    height: 100px;
     position: fixed;
     width: 100%;
     bottom: 0;
+    margin-top: auto;
+    padding-bottom: 40px;
   }
 
 .footer ul {
