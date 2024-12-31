@@ -30,19 +30,19 @@
 
         <header></header>
 
-        <main> <!-- hier steht der gesammte Content der Website, wird im <main> Element gekapselt
-               besteht aus den Bereichen Navigation, Sektionen mit Überschriften, Tabellen...-->
-            
-           <nav> <!--hier wird wieder eine unnumerrierte Liste mit Links dargestellt-->
+    <div class="main-container">
+        <nav class="navigation"> 
                 <ul>
                 <li><a href="krisenregion.html">Aktuelle Krisenregionen</a></li>
                 <li><a href="formular.html" >Registrierung einer Kleiderspende</a></li>
                 <li><a href="about.html">Über uns</a></li>
                 </ul>
-             </nav>
+                <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            </nav>
 
-             <section> <!-- Definiert einen Abschnitt, dient der semantischen Gliederung
-                        damit kann über CSS Regeln auch Layouts hinterlegt werden-->
+
+            <main>            
+             <section> 
                     <h1>Schön, dass Sie da sind!</h1>
                         <p>Wir freuen uns, dass Sie den Weg zu unserer Website gefunden haben.</p>
                         <p>Was tun wir hier? Kurz gesagt sind wir ein gemeinnütziger Verein, der Kleiderspenden in Krisenregionen schickt. 
@@ -53,8 +53,23 @@
                             Gerne dürfen Sie uns auch an Nachbarn und Freunde weiterempfehlen!</p>    
                </section>
         </main>
+    </div>
+
 
         <footer></footer>
+
+        <script> 
+            function toggleMenu() { 
+                var nav = document.querySelector('.navigation ul'); 
+                if (nav) { nav.style.display = nav.style.display === 'block' ? 'none' : 'block'; 
+                } 
+                else { 
+                    console.error('Element .navigation ul nicht gefunden'); 
+                    } 
+                } 
+        </script>
+
+
 
     </body>
 
