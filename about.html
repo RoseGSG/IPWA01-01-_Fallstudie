@@ -16,26 +16,22 @@
                     .then(data => {
                         document.querySelector('footer').innerHTML = data;
                     });
+
+                fetch("navigation.html") 
+                    .then(response => response.text()) 
+                    .then(data => { document.getElementById("navigation").innerHTML = data; 
+                    });
             });
         </script>
-
-<script>  //Skript für die Navigation
-document.addEventListener("DOMContentLoaded", 
-function() { 
-    fetch("navigation.html") 
-    .then(response => response.text()) 
-    .then(data => { document.getElementById("navigation").innerHTML = data; 
-    }); 
-}); 
-</script>
     </head>
 
 <body>
 
-    <header></header>
+<header></header>
+        <div class="complete-content">
 
     <div id="navigation"></div>
-    
+
     <main class="main-container">
         <h1>Über uns</h1>
             <h2>Wer sind wir eigentilch?</h2>
@@ -47,7 +43,10 @@ function() {
             <p>Über unser Kontaktformular können Sie jederzeit mit uns in Kontakt treten: <a  href="contact.html">Kontakt</a></p>
     </main>
 
+        </div>
+
 <footer></footer>
+
 
 </body>
 </html>

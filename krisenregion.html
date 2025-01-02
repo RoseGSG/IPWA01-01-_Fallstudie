@@ -3,7 +3,7 @@
     <head>  
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
         <link rel="stylesheet" href="styles.css" /> 
-     <script>
+        <script>
             document.addEventListener("DOMContentLoaded", function() {
                 fetch('header.html')
                     .then(response => response.text())
@@ -16,17 +16,12 @@
                     .then(data => {
                         document.querySelector('footer').innerHTML = data;
                     });
-            });
-        </script>
 
-        <script>  //Skript für die Navigation
-            document.addEventListener("DOMContentLoaded", 
-            function() { 
                 fetch("navigation.html") 
-                .then(response => response.text()) 
-                .then(data => { document.getElementById("navigation").innerHTML = data; 
-                }); 
-            }); 
+                    .then(response => response.text()) 
+                    .then(data => { document.getElementById("navigation").innerHTML = data; 
+                    });
+            });
         </script>
 
     </head>
@@ -34,6 +29,8 @@
 <body>
 
     <header></header>
+            <div class="complete-content">
+
     <div id="navigation"></div>
 
     <main class="main-container">
@@ -98,6 +95,7 @@
             </tbody>
         </table>
     </main>
+            </div>
 
 
  
