@@ -30,145 +30,162 @@
 <body>
 
     <header></header>
-          <div class="complete-content">
 
+
+<div class="complete-content">
     <div id="navigation"></div>
-
     <main class="main-container">
-          <section class="section">
+        <section class="section">
             <div class="container">
-              <h3 class="title is-3">Unsere Geschäftstelle befindet sich hier:</h3>
-              <p><h5 class="title is-5">Hilfestraße 5<br>90471 Nürnberg </h5></p>
-        
-              <h4 class="title is-4">Sie können Ihre Spende entweder direkt bei unserer Geschäftstelle abgeben
-                oder Sie lassen Ihre Spende bequem von unserem Sammelfahrzeug bei Ihnen zu Hause abholen.
-              </h4>
-        
-              <form>
-                <div class="field">
-                  <label class="label" for="Abgabe">Abgabe:</label>
-                  <div class="control">
-                    <div class="select">
-                      <select id="Abgabe" name="Abgabe:" oninput="checkInput()">
-                        <option value="">Bitte wählen</option>
-                        <option value="geschäftsstelle">Übergabe an der Geschäftsstelle</option>
-                        <option value="sammelfahrzeug">Abholung durch Sammelfahrzeug</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-        
-            <div id="AlleContainer" class="field hidden">
-                <div id="AbholerContainer" class="field hidden">
-                  <label class="label" for="Anrede">Anrede: </label>
-                  <div class="control">
-                    <div class="select">
-                      <select id="Anrede" name="Anrede">
-                        <option value="">Bitte wählen</option>
-                        <option value="Herr">Herr</option>
-                        <option value="Frau">Frau</option>
-                        <option value="Divers">Divers</option>
-                      </select>
-                    </div>
-                  </div>
-            
-                <div class="field">
-                    <label class="label" for="Nachname">Nachname: </label>
-                  <div class="control">
-                    <input class="input" type="text" name="Nachname" id="Nachname" placeholder="Nachname">
-                  </div>
-                </div>
-        
-                <div class="field">
-                    <label class="label" for="Vorname">Vorname: </label>
-                  <div class="control">
-                    <input class="input" type="text" name="Vorname" id="Vorname" placeholder="Vorname">
-                  </div>
-                </div>
-        
-                <div class="field">
-                    <label class="label" for="email">Email-Adresse: </label>
-                  <div class="control">
-                    <input class="input" type="email" name="email" id="email" placeholder="Email-Adresse">
-                  </div>
-                </div>
-        
-                <div class="field">
-                    <label class="label" for="Straße">Straße: </label>
-                  <div class="control">
-                    <input class="input" type="text" name="Straße" id="Straße" placeholder="Straße">
-                  </div>
-                </div>
-        
-                <div class="field">
-                    <label class="label" for="Hausnummer">Hausnummer: </label>
-                  <div class="control">
-                    <input class="input" type="number" name="Hausnummer" id="Hausnummer" placeholder="Hausnummer">
-                  </div>
-                </div>
-        
-                <div class="field">
-                  <form onsubmit="vergleichen(event);">
-                    <label class="label" for="Postleitzahl">Postleitzahl</label>
-                    <div class="control">
-                      <input class="input" type="number" id="Postleitzahl" name="Postleitzahl" placeholder="Postleitzahl" required>
-                    </div>
-                    <div class="control">
-                      <button class="button is-primary" type="submit" id="Plz prüfen">Plz prüfen</button>
-                    </div>
-                  </form>
-                </div>
-        
-                <div class="field">
-                    <label class="label" for="Ort">Ort: </label>
-                  <div class="control">
-                    <input class="input" type="text" id="Ort" name="Ort" placeholder="Ort">
-                  </div>
-                </div>
-                </div>  
+                <h3 class="title is-3">Unsere Geschäftstelle befindet sich hier:</h3>
+                <h5 class="title is-5">Hilfestraße 5<br>90471 Nürnberg</h5>
+                <h4 class="title is-4">Sie können Ihre Spende entweder direkt bei unserer Geschäftstelle abgeben oder Sie lassen Ihre Spende bequem von unserem Sammelfahrzeug bei Ihnen zu Hause abholen.</h4>
                 
-            </div>
-              </form>
-              <form id="dynamicForm">
-                <div class="field">
-                  <label class="label" for="Kleiderart">Art der Kleidung: </label>
-                  <div class="control">
-                    <div class="select">
-                      <select id="Kleiderart" name="Kleiderart">
-                        <option value="">Bitte wählen</option>
-                        <option value="schuhe">Schuhe</option>
-                        <option value="jacke">Jacken, Mäntel etc.</option>
-                        <option value="hose">Hosen etc.</option>
-                        <option value="oberteil">Pulli, Bluse, Hemden etc.</option>
-                        <option value="kleider">Kleider, Röcke etc.</option>
-                        <option value="hut">Kopfbedekungen (Hut, Mütze, Capy etc.)</option>
-                      </select>
+                <form>
+                    <div class="field">
+                        <label class="label" for="Abgabe">Abgabe:</label>
+                        <div class="control">
+                            <div class="select">
+                                <select id="Abgabe" name="Abgabe:" oninput="checkInput()">
+                                    <option value="">Bitte wählen</option>
+                                    <option value="geschäftsstelle">Übergabe an der Geschäftsstelle</option>
+                                    <option value="sammelfahrzeug">Abholung durch Sammelfahrzeug</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-              </form>
-        
-              <form>
-                <div class="field">
-                  <label class="label" for="krisenregion">Wähle eine Krisenregion:</label>
-                  <div class="control">
-                    <div class="select">
-                      <select id="Krisenregion" title="TabelleKrisenregionen" name="Krisenregion"></select>
+
+                    <div id="AlleContainer" class="field hidden">
+                        <div id="AbholerContainer" class="field hidden">
+                            <label class="label" for="Anrede">Anrede:</label>
+                            <div class="control mb-5">
+                                <div class="select">
+                                    <select id="Anrede" name="Anrede">
+                                        <option value="">Bitte wählen</option>
+                                        <option value="Herr">Herr</option>
+                                        <option value="Frau">Frau</option>
+                                        <option value="Divers">Divers</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="columns">
+                                <div class="column is-half">
+                                    <div class="field">
+                                        <label class="label" for="Nachname">Nachname:</label>
+                                        <div class="control">
+                                            <input class="input" type="text" name="Nachname" id="Nachname" placeholder="Nachname">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-half">
+                                    <div class="field">
+                                        <label class="label" for="Vorname">Vorname:</label>
+                                        <div class="control">
+                                            <input class="input" type="text" name="Vorname" id="Vorname" placeholder="Vorname">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                                    <div class="field">
+                                        <label class="label" for="email">Email-Adresse:</label>
+                                        <div class="control">
+                                            <input class="input" type="email" name="email" id="email" placeholder="Email-Adresse">
+                                        </div>
+                                      </div>
+
+                              <div class="columns">   
+                                <div class="column is-half">
+                                    <div class="field">
+                                        <label class="label" for="Straße">Straße:</label>
+                                        <div class="control">
+                                            <input class="input" type="text" name="Straße" id="Straße" placeholder="Straße">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-half">
+                                    <div class="field">
+                                        <label class="label" for="Hausnummer">Hausnummer:</label>
+                                        <div class="control">
+                                            <input class="input" type="number" name="Hausnummer" id="Hausnummer" placeholder="Hausnummer">
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                                
+                              <div class="columns">
+                                <div class="column is-half">
+                                  <div class="field">
+                                    <form onsubmit="vergleichen(event);">
+                                      <label class="label" for="Postleitzahl">Postleitzahl</label>
+                                      <div class="control">
+                                        <input class="input" type="number" id="Postleitzahl" name="Postleitzahl" placeholder="Postleitzahl" required>
+                                      </div>
+                                      <div class="control">
+                                        <button class="button is-primary" type="submit" id="Plz prüfen">Plz prüfen</button>
+                                      </div>
+                                    </form>
+                                  </div>
+                                </div>
+                                <div class="column is-half">
+                                    <div class="field">
+                                        <label class="label" for="Ort">Ort:</label>
+                                        <div class="control">
+                                            <input class="input" type="text" id="Ort" name="Ort" placeholder="Ort">
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            
+                        </div>
+
+                        <div id="GeschäftsstelleContainer" class="field hidden">
+                            <div class="columns">
+                                <div class="column is-half">
+                                    <div class="field">
+                                        <label class="label" for="Kleiderart">Art der Kleidung:</label>
+                                        <div class="control">
+                                            <div class="select">
+                                                <select id="Kleiderart" name="Kleiderart">
+                                                    <option value="">Bitte wählen</option>
+                                                    <option value="schuhe">Schuhe</option>
+                                                    <option value="jacke">Jacken, Mäntel etc.</option>
+                                                    <option value="hose">Hosen etc.</option>
+                                                    <option value="oberteil">Pulli, Bluse, Hemden etc.</option>
+                                                    <option value="kleider">Kleider, Röcke etc.</option>
+                                                    <option value="hut">Kopfbedekungen (Hut, Mütze, Capy etc.)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-half">
+                                    <div class="field">
+                                        <label class="label" for="krisenregion">Wähle eine Krisenregion:</label>
+                                        <div class="control">
+                                            <div class="select">
+                                                <select id="Krisenregion" title="TabelleKrisenregionen" name="Krisenregion"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control">
+                                <button class="button is-primary" type="submit" id="Kleiderspende registrieren">Kleiderspende registrieren</button>
+                            </div>
                     </div>
-                  </div>
-                </div>
-                <div class="control">
-                  <button class="button is-primary" type="submit" id="Kleiderspende registrieren">Kleiderspende registrieren</button>
-                </div>
-              </form>
+                        
+                    </div>
+                </form>
             </div>
-        </div>
-          </section>
- </main>
+        </section>
+    </main>
+</div>
 
-          </div>
+    
 
-          
+
 <footer></footer>
 <script>
     // Funktion zum Laden der Tabelle und Extrahieren der Werte
@@ -201,8 +218,15 @@
         function() { 
             if (abgabeSelect.value === 'sammelfahrzeug') { 
                 AbholerContainer.classList.remove('hidden'); 
+                GeschäftsstelleContainer.classList.remove('hidden'); 
                 AlleContainer.classList.remove('hidden'); 
-                } else { 
+                } 
+            if (abgabeSelect.value === 'geschäftsstelle') { 
+                AbholerContainer.classList.add('hidden'); 
+                GeschäftsstelleContainer.classList.remove('hidden'); 
+                AlleContainer.classList.remove('hidden'); 
+                }
+                else { 
                     AbholerContainer.classList.add('hidden'); 
                     AlleContainer.classList.add('hidden'); 
                     } 
