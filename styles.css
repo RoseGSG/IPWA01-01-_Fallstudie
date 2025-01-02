@@ -145,8 +145,14 @@ html, body {
     body {
         font-size: 14px;
     }
+    .header {
+      height: 130px;
+    }
     .header-image {
         max-width: 60%;
+    }
+    .complete-content{
+      margin-top: 110px;
     }
     .navigation {
         display: none;
