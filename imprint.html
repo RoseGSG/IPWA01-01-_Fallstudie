@@ -18,13 +18,25 @@
                     });
             });
         </script>
+
+        <script>  //Skript für die Navigation
+            document.addEventListener("DOMContentLoaded", 
+            function() { 
+                fetch("navigation.html") 
+                .then(response => response.text()) 
+                .then(data => { document.getElementById("navigation").innerHTML = data; 
+                }); 
+            }); 
+        </script>
+
     </head>
 
 <body>
 
     <header></header>
+    <div id="navigation"></div>
 
-    <main>
+    <main class="main-container">
         <h1>Impressum</h1>
         <p>Hier steht das Impressum</p>
     </main>

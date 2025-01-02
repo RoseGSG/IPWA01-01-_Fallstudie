@@ -18,13 +18,25 @@
                     });
             });
         </script>
+
+        <script>  //Skript für die Navigation
+            document.addEventListener("DOMContentLoaded", 
+            function() { 
+                fetch("navigation.html") 
+                .then(response => response.text()) 
+                .then(data => { document.getElementById("navigation").innerHTML = data; 
+                }); 
+            }); 
+        </script>
+
     </head>
 
 <body>
 
     <header></header>
+    <div id="navigation"></div>
 
-    <main>
+    <main class="main-container">
         <h1>Kontakt</h1>
         <h2>Sie möchten uns eine Nachricht schreiben?</h2>
         <p>Dann nutzen Sie ganz einfach unser Kontaktformular. Wir sind gerne für Sie da und beantworten Ihre Fragen.

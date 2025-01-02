@@ -23,25 +23,26 @@
                     });
             });
         </script>
+
+        <script>  //Skript für die Navigation
+            document.addEventListener("DOMContentLoaded", 
+            function() { 
+                fetch("navigation.html") 
+                .then(response => response.text()) 
+                .then(data => { document.getElementById("navigation").innerHTML = data; 
+                }); 
+            }); 
+        </script>
+
     </head>
 
     <body>
         <title>Registrierung von Kleiderspenden</title>
 
         <header></header>
+        <div id="navigation"></div>
 
-    <div class="main-container">
-        <nav class="navigation has-text-weight-semibold is-italic"> 
-                <ul>
-                <li><a href="krisenregion.html">Aktuelle Krisenregionen</a></li>
-                <li><a href="formular.html" >Registrierung einer Kleiderspende</a></li>
-                <li><a href="about.html">Über uns</a></li>
-                </ul>
-                <div class="menu-icon" onclick="toggleMenu()">☰</div>
-            </nav>
-
-
-            <main>            
+         <main class="main-container">            
              <section class="section"> 
                     <h1 class="title is-1">Schön, dass Sie da sind!</h1>
                         <p class="title is-3">Wir freuen uns, dass Sie den Weg zu unserer Website gefunden haben.</p>
@@ -53,8 +54,6 @@
                             Gerne dürfen Sie uns auch an Nachbarn und Freunde weiterempfehlen!</p>    
                </section>
         </main>
-    </div>
-
 
         <footer></footer>
 
