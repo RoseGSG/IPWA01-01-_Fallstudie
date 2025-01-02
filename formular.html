@@ -55,7 +55,6 @@
                         </div>
                     </div>
 
-                    <div id="AlleContainer" class="field hidden">
                         <div id="AbholerContainer" class="field hidden">
                             <label class="label" for="Anrede">Anrede:</label>
                             <div class="control mb-5">
@@ -175,8 +174,7 @@
                                 <button class="button is-primary" type="submit" id="Kleiderspende registrieren">Kleiderspende registrieren</button>
                             </div>
                     </div>
-                        
-                    </div>
+                      
                 </form>
             </div>
         </section>
@@ -213,22 +211,18 @@
     document.addEventListener('DOMContentLoaded', function() { 
         const abgabeSelect = document.getElementById('Abgabe'); 
         const AbholerContainer = document.getElementById('AbholerContainer'); 
-        const AlleContainer = document.getElementById('AlleContainer'); 
+        const GeschäftsstelleContainer = document.getElementById('GeschäftsstelleContainer');
         abgabeSelect.addEventListener('change', 
         function() { 
             if (abgabeSelect.value === 'sammelfahrzeug') { 
                 AbholerContainer.classList.remove('hidden'); 
                 GeschäftsstelleContainer.classList.remove('hidden'); 
-                AlleContainer.classList.remove('hidden'); 
-                } 
-            if (abgabeSelect.value === 'geschäftsstelle') { 
-                AbholerContainer.classList.add('hidden'); 
-                GeschäftsstelleContainer.classList.remove('hidden'); 
-                AlleContainer.classList.remove('hidden'); 
-                }
-                else { 
-                    AbholerContainer.classList.add('hidden'); 
-                    AlleContainer.classList.add('hidden'); 
+            } else if (abgabeSelect.value === 'geschäftsstelle') {
+                GeschäftsstelleContainer.classList.remove('hidden');
+            }
+              else { 
+                AbholerContainer.classList.add('hidden');
+                GeschäftsstelleContainer.classList.add('hidden') ;
                     } 
                 }); 
             }); 
