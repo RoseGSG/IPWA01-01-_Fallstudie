@@ -255,7 +255,7 @@
     document.getElementById('Plz prüfen').addEventListener('click', vergleichen)
 </script>
 
-<script>
+<script> //zum Öffnen des neuen Fensters
     document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('Kleiderspende registrieren').addEventListener('click', function(event) {
             event.preventDefault();
@@ -279,7 +279,14 @@
             const dateTimeString = now.toLocaleString('de-DE', options);
 
             // Erstelle eine neue Seite mit den Eingabewerten
-            let newPageContent = '<h1>Übersicht der Eingaben</h1>';
+            let newPageContent = `
+               <title>Übersicht Ihrer Eingaben</title>
+                
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+                <link rel="stylesheet" href="styles.css" /> 
+
+              <div class="zusammenfassung-container">
+                <h1 class="title">Übersicht Ihrer Eingaben</h1>`;
             if (Anrede) {
                 newPageContent += `<p><strong>Anrede:</strong> ${Anrede}</p>`;}
             if (Nachname) {
@@ -302,8 +309,12 @@
                 newPageContent += `<p><strong>Krisenregion:</strong> ${Krisenregion}</p>`;}
             // Füge Ort, Datum und Uhrzeit am Ende der Zusammenfassung hinzu 
                 newPageContent += `<p><strong>${Ort}, den ${dateTimeString.split(', ')[0]} um ${dateTimeString.split(', ')[1]} Uhr</strong></p>`;
-            // Öffne eine neue Seite und füge den Inhalt hinzu 
-            const newWindow = window.open('', 'Ihre Zusammenfassung', 'width=600,height=600'); 
+                newPageContent += '<p><strong>Vielen Dank für Ihre Spende!</strong></p>'
+                newPageContent += `
+              </div>`;
+
+           // Öffne eine neue Seite und füge den Inhalt hinzu 
+            const newWindow = window.open('', '', 'width=600,height=600'); 
             newWindow.document.write(newPageContent); 
             newWindow.document.close();
         });

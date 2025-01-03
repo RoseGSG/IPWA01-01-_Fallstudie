@@ -140,6 +140,14 @@ html, body {
     color: #63d1d1 !important;
 }
 
+.zusammenfassung-container {
+  background-color: #f2f9fa;
+  height: auto;
+  margin: 20px;
+  padding: 20px;
+}
+
+
 /* Media Queries für verschiedene Bildschirmgrößen */
 @media (max-width: 768px) {
     body {
