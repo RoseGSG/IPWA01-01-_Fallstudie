@@ -3,7 +3,16 @@
     <head>  
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
         <link rel="stylesheet" href="styles.css" /> 
-        <script>
+      
+        <!--Bulma Link und Script für automatisches Sortieren und Suchen-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> 
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"> 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+        <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
+       
+       
+       <script>
             document.addEventListener("DOMContentLoaded", function() {
                 fetch('header.html')
                     .then(response => response.text())
@@ -35,7 +44,7 @@
 
     <main class="main-container">
         <h1 class="title is-1 is-size-3-mobile">Unsere aktuellen Krisenregionen</h1>
-        <table id="dataKrisenregion"> 
+        <table id="dataKrisenregion" class="table is-striped is-hoverable is-fullwidth"> 
             <thead> 
                 <tr> 
                     <th id="region">Regionen, die wir unterstützen: </th>
@@ -99,7 +108,14 @@
             </div>
 
 
- 
+     <script> $(document).ready(function() {
+         $('#dataKrisenregion').DataTable({ 
+            language: { 
+                url: '//cdn.datatables.net/plug-ins/1.11.3/i18n/de_de.json' 
+                } 
+            }); 
+         }); 
+    </script>
 
 
 <footer></footer>
