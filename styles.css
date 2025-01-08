@@ -2,7 +2,7 @@
 @use "bulma/sass/base";
 @use "bulma/sass/themes";
 
-/* Laden der Buttons und Titelelemente und Komponente*/
+/* Laden der Buttons und Titelelemente und Komponenten*/
 @use "bulma/sass/elements/button";
 @use "bulma/sass/elements/title";
 @use "bulma/sass/components/message";
@@ -73,7 +73,7 @@ html, body {
 
 .header-image {
     margin-left: auto;
-    max-width: 150px;
+    max-width: 100px;
     height: auto;
 }
 
@@ -156,7 +156,7 @@ html, body {
       height: 130px;
     }
     .header-image {
-        max-width: 60%;
+        max-width: 30%;
     }
     .complete-content{
       margin-top: 110px;

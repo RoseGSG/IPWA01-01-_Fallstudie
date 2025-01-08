@@ -207,7 +207,8 @@
     document.addEventListener('DOMContentLoaded', loadTableData);
 </script>
 
-<script> //Script zum optionalen Einblenden von Name und Adresse, jenachdem ob Geschäftstelle oder Abholung ausgewählt wurde
+<script> //Script zum optionalen Einblenden von Name und Adresse, 
+        // jenachdem ob Geschäftstelle oder Abholung ausgewählt wurde
     document.addEventListener('DOMContentLoaded', function() { 
         const abgabeSelect = document.getElementById('Abgabe'); 
         const AbholerContainer = document.getElementById('AbholerContainer'); 
@@ -275,7 +276,8 @@
             
             // Erfasse das aktuelle Datum und die Uhrzeit ohne Sekunden 
             const now = new Date(); 
-            const options = { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' }; 
+            const options = { year: 'numeric', month: 'numeric', day: 'numeric', 
+                                hour: 'numeric', minute: 'numeric' }; 
             const dateTimeString = now.toLocaleString('de-DE', options);
 
             // Erstelle eine neue Seite mit den Eingabewerten
