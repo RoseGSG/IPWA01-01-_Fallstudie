@@ -17,10 +17,29 @@
                       document.querySelector('footer').innerHTML = data;
                   });
 
-              fetch("navigation.html") 
-                  .then(response => response.text()) 
-                  .then(data => { document.getElementById("navigation").innerHTML = data; 
-                  });
+                  fetch("navigation.html")
+                    .then(response => response.text())
+                    .then(data => {
+                        // Füge die Navigation in das Ziel-Element ein
+                        document.getElementById("navigation").innerHTML = data;
+
+                        // Navigation und Menü-Symbol nach Einfügen initialisieren
+                        const menuIcon = document.querySelector(".menu-icon");
+                        const navigation = document.querySelector(".navigation");
+
+                        if (menuIcon && navigation) {
+                            menuIcon.addEventListener("click", function () {
+                                if (navigation.style.display === "none" || navigation.style.display === "") {
+                                    navigation.style.display = "block"; // Einblenden
+                                } else {
+                                    navigation.style.display = "none"; // Ausblenden
+                                }
+                            });
+                        } else {
+                            console.error("Menu-Icon oder Navigation nicht gefunden.");
+                        }
+                    })
+                    .catch(error => console.error("Fehler beim Laden der Navigation:", error));
           });
       </script>
 

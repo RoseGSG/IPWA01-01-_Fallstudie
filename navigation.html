@@ -1,7 +1,7 @@
 <body>
     <header></header>
     <div>
-      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      <div class="menu-icon">☰</div>
         <nav class="navigation">
             <ul class="has-text-weight-semibold is-italic">
                 <li><a href="krisenregion.html">Aktuelle Krisenregionen</a></li>
@@ -13,17 +13,18 @@
 
     <footer></footer>
 
-    <script> 
-        function toggleMenu() { 
-            var nav = document.querySelector('.navigation'); 
-            if (nav) { nav.classList.toggle('hidden'); 
-            } else { 
-                console.error('Element .navigation nicht gefunden'); 
-                } 
-        } 
-        document.addEventListener("DOMContentLoaded", function() { 
-            const menuIcon = document.querySelector(".menu-icon"); 
-            menuIcon.addEventListener("click", toggleMenu); 
-            }); 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Holt das Menü-Symbol und die Navigation
+            const menuIcon = document.querySelector(".menu-icon");
+            const navigation = document.querySelector(".navigation");
+    
+            // Fügt einen Klick-Event-Listener zum Symbol hinzu
+            menuIcon.addEventListener("click", function () {
+                // Navigation ein-/ausblenden
+                navigation.classList.toggle("hidden");
+            });
+        });
     </script>
+    
 </body>
