@@ -158,6 +158,9 @@ html, body {
     .header {
       height: 130px;
     }
+    .header-list {
+        top: 5px;
+    }
     .header-image {
         max-width: 20%;
     }
@@ -166,7 +169,7 @@ html, body {
     }
     .navigation {
         position: fixed;
-        top: 15;
+        top: 20;
         left: 5;
         width: 100%;
         min-height: 100vh;
